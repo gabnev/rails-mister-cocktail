@@ -1,0 +1,10 @@
+<%= @cocktail.name %>
+<ul>
+  <li>here goes ingredients and doses!</li>
+</ul>
+
+<%= link_to "Edit Cocktail", edit_cocktail_path%>
+<br>
+<%= link_to "Delete Cocktail #{@cocktail.name}", cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"}%>
+<br>
+<%= link_to "Return", cocktails_path %>

@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Drinks</h1>
+
+  <div>
+    <%= link_to "Create drink", new_cocktail_path %>  
+  </div>
+  
+
+  <ul>
+  <% @cocktails.each do |element| %>
+    <li>
+      <%= link_to "#{element.name}", "/cocktails/#{element.id}"  %>
+    </li>
+  <% end %>
+  </ul>
+</div>

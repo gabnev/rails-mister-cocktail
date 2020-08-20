@@ -1,0 +1,6 @@
+<%= simple_form_for @cocktail do |element| %>
+  <%= element.input :name %>
+  <%= element.submit %>
+<% end %>
+
+<%= link_to "Return", "/cocktails/#{@cocktail.id}" %>
