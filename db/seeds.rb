@@ -5,13 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
-puts "Deleting previous items . . ."
-
-Ingredient.delete_all
-puts "Creating new ingredients . . ."
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
-
-puts "Done."
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+cocktail = Cocktail.new(name: 'Berserker Rage')
+cocktail.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+cocktail.save

@@ -1,6 +1,10 @@
-<%= simple_form_for @cocktail do |element| %>
-  <%= element.input :name %>
-    <%= element.submit class: "btn btn-primary" %>
+
+
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
+  <%# if multiple phots will be uploaded change :photo to :photos, and add input_html { multiple: true } %>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>
 
 <%= link_to "Return", "/cocktails" %>
