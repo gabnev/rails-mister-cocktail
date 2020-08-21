@@ -1,17 +1,21 @@
-
 <div class="container d-flex">
-  <div class="row">
+  <div class="row">    
+    <% @cocktails.each do |element| %>
       <div class="col-4">
-        <% @cocktails.each do |element| %>
           <div class="card  m-3" style="width: 18rem;">
-            <%= cl_image_tag element.photo.key, class: "card-img-top" %>
+
+            <% if element.photo.attached? %>
+            <%=  cl_image_tag element.photo.key, class: "card-img-top" %>
+            <% else %>
+            <% puts "NO IMAGE" %>
+            <% end %>
+
             <div class="card-body">
               <h5 class="card-title"><%= element.name  %></h5>
               <%= link_to "Check out #{element.name}", "/cocktails/#{element.id}", class: "btn btn-secondary btn-lg" %>
             </div>
           </div>
-        <% end %>
       </div>
+    <% end %>
   </div>
 </div>
-
