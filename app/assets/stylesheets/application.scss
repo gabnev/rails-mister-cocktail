@@ -7,6 +7,8 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=MedievalSharp&display=swap');
+
 
 // Your CSS partials
 @import "components/index";
@@ -25,5 +27,5 @@ a {
 
 ul {
   list-style: none;
-  text-align: center;
+  padding: 0;
 }
